@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
   def index
-    @events = Event.all
+    @events = Event.page(params[:page]).per(10)
 
     render("event_templates/index.html.erb")
   end
