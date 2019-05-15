@@ -6,6 +6,7 @@ class EventsController < ApplicationController
   end
 
   def show
+    @bookmark = Bookmark.new
     @event = Event.find(params.fetch("id_to_display"))
 
     render("event_templates/show.html.erb")

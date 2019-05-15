@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/bookmarks/new", { :controller => "bookmarks", :action => "new_form" })
   post("/create_bookmark", { :controller => "bookmarks", :action => "create_row" })
+  post("/create_bookmark_from_event", { :controller => "bookmarks", :action => "create_row_from_event" })
 
   # READ
   get("/bookmarks", { :controller => "bookmarks", :action => "index" })
