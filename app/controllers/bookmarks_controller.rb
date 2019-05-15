@@ -10,7 +10,8 @@ class BookmarksController < ApplicationController
   end
 
   def index
-    @bookmarks = current_user.bookmarks.page(params[:page]).per(10)
+    @q = current_user.bookmarks.ransack(params[:q])
+    @bookmarks = @q.result(:distinct => true).includes(:user, :event).page(params[:page]).per(10)
 
     render("bookmark_templates/index.html.erb")
   end
