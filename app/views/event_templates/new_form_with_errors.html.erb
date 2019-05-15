@@ -1,0 +1,68 @@
+<!-- Validation failure messages -->
+<% if @event.present? %>
+  <% if @event.errors.any? %>
+    <% @event.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h1>
+  Add a new event
+</h1>
+
+
+<hr>
+
+<!-- Form event start -->
+<form action="/create_event" method="post">
+<!-- Form event end -->
+
+  <!-- Label and input for name start -->
+  <div class="form-group">
+    <label for="name">
+      Name
+    </label>
+
+    <!-- Input for name start -->
+    <input type="text" id="name" name="name" class="form-control" value="<%= @event.name %>">
+    <!-- Input for name end -->
+  </div>
+  <!-- Label and input for name end -->
+
+  <!-- Label and input for discription start -->
+  <div class="form-group">
+    <label for="discription">
+      Discription
+    </label>
+
+    <!-- Input for discription start -->
+    <textarea id="discription" name="discription" class="form-control" rows="3"><%= @event.discription %></textarea>
+    <!-- Input for discription end -->
+  </div>
+  <!-- Label and input for discription end -->
+
+  <!-- Label and input for venue start -->
+  <div class="form-group">
+    <label for="venue">
+      Venue
+    </label>
+
+    <!-- Input for venue start -->
+    <input type="text" id="venue" name="venue" class="form-control" value="<%= @event.venue %>">
+    <!-- Input for venue end -->
+  </div>
+  <!-- Label and input for venue end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create event
+  </button>
+</form>
+
+<hr>
+
+<a href="/events">
+  Go back
+</a>
