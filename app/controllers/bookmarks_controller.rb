@@ -10,7 +10,7 @@ class BookmarksController < ApplicationController
   end
 
   def index
-    @bookmarks = Bookmark.all
+    @bookmarks = current_user.bookmarks.page(params[:page]).per(10)
 
     render("bookmark_templates/index.html.erb")
   end
