@@ -54,3 +54,4 @@ gem 'web_git', github: 'firstdraft/web_git'
 gem 'activeadmin', '1.2.1'
 gem 'carrierwave'
 gem 'cloudinary'
+gem "rollbar"
