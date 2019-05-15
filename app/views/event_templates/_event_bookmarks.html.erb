@@ -17,9 +17,11 @@
         <!-- Show link end -->
 
         <!-- Delete link start -->
-        <a href="/delete_bookmark_from_event/<%= bookmark.id %>">
-          Delete
-        </a>
+        <%if current_user == bookmark.user %>
+          <a href="/delete_bookmark_from_event/<%= bookmark.id %>">
+            Delete
+          </a>
+        <% end %>
         <!-- Delete link end -->
 
       </li>

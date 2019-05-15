@@ -13,17 +13,21 @@
 
       <!-- Edit link bookmark start -->
       <div class="col">
-        <a href="/bookmarks/<%= @bookmark.id %>/edit" class="btn btn-block btn-outline-secondary">
-          Edit bookmark
-        </a>
+        <% if current_user == @bookmark.user %>
+          <a href="/bookmarks/<%= @bookmark.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
+            Edit bookmark
+          </a>
+        <% end %>
       </div>
       <!-- Edit link bookmark end -->
 
       <!-- Delete link bookmark start -->
       <div class="col">
-        <a href="/delete_bookmark/<%= @bookmark.id %>" class="btn btn-block btn-outline-secondary">
-          Delete bookmark
-        </a>
+        <% if current_user == @bookmark.user %>
+          <a href="/delete_bookmark/<%= @bookmark.id %>" class="btn btn-block btn-sm btn-outline-secondary">
+            Delete bookmark
+          </a>
+        <% end %>
       </div>
       <!-- Delete link bookmark end -->
     </div>
