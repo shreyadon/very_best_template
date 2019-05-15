@@ -60,7 +60,7 @@ class BookmarksController < ApplicationController
   def update_row
     @bookmark = Bookmark.find(params.fetch("id_to_modify"))
 
-    @bookmark.user_id = params.fetch("user_id")
+    
     @bookmark.notes = params.fetch("notes")
     @bookmark.image = params.fetch("image") if params.key?("image")
     @bookmark.event_id = params.fetch("event_id")
