@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "bookmarks#index"
   # Routes for the Event resource:
 
   # CREATE
