@@ -1,41 +1,24 @@
-<!-- Form bookmark start -->
 <form action="/create_bookmark" method="post" enctype="multipart/form-data">
-<!-- Form bookmark end -->
 
-  <!-- Label and input for user_id start -->
-  <!-- Input for "user_id" start -->
   <input type="hidden" name="user_id" value="<%= current_user.id %>">
-  <!-- Input for "user_id" end -->
-  <!-- Label and input for user_id end -->
 
-  <!-- Label and input for notes start -->
   <div class="form-group">
     <label for="notes">
       Notes
     </label>
 
-    <!-- Input for notes start -->
     <textarea id="notes" name="notes" class="form-control" rows="3"><%= @bookmark.notes %></textarea>
-    <!-- Input for notes end -->
   </div>
-  <!-- Label and input for notes end -->
 
-  <!-- Label and input for image start -->
   <div class="form-group">
     <label for="image">
       Image
     </label>
 
-    <!-- Input for image start -->
     <input type="file" id="image" name="image" class="form-control">
-    <!-- Input for image end -->
   </div>
-  <!-- Label and input for image end -->
 
-  <!-- Label and input for event_id start -->
-  <!-- Input for event_id start -->
   <input type="hidden" name="event_id" value="<%= @event.id %>">
-  <!-- Input for event_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create bookmark
