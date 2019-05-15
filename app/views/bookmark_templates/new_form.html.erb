@@ -52,7 +52,7 @@
     </label>
 
     <!-- Input for event_id start -->
-    <input type="text" id="event_id" name="event_id" class="form-control">
+    <%= select_tag(:event_id, options_from_collection_for_select(Event.all, :id, :name, @bookmark.event_id), :class => "form-control") %>
     <!-- Input for event_id end -->
   </div>
   <!-- Label and input for event_id end -->
