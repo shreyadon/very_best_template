@@ -57,6 +57,22 @@ class BookmarksController < ApplicationController
     end
   end
 
+  def destroy_row_from_user
+    @bookmark = Bookmark.find(params.fetch("id_to_remove"))
+
+    @bookmark.destroy
+
+    redirect_to("/users/#{@bookmark.user_id}", notice: "Bookmark deleted successfully.")
+  end
+
+  def destroy_row_from_event
+    @bookmark = Bookmark.find(params.fetch("id_to_remove"))
+
+    @bookmark.destroy
+
+    redirect_to("/events/#{@bookmark.event_id}", notice: "Bookmark deleted successfully.")
+  end
+
   def destroy_row
     @bookmark = Bookmark.find(params.fetch("id_to_remove"))
 
