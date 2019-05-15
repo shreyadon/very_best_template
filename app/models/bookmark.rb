@@ -1,6 +1,8 @@
 class Bookmark < ApplicationRecord
   # Direct associations
 
+  belongs_to :event
+
   belongs_to :user,
              :counter_cache => true
 
