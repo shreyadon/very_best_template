@@ -66,7 +66,11 @@
 
         <!-- Display bookmark.user_id start -->
         <td>
-          <%= bookmark.user.username %>
+          <% if bookmark.user.present? %>
+            <a href="/users/<%= bookmark.user.id %>">
+              <%= bookmark.user.username %>
+            </a>
+          <% end %>
         </td>
         <!-- Display bookmark.user_id end -->
 
@@ -84,7 +88,11 @@
 
         <!-- Display bookmark.event_id start -->
         <td>
-          <%= bookmark.event.name %>
+          <% if bookmark.event.present? %>
+            <a href="/events/<%= bookmark.event.id %>">
+              <%= bookmark.event.name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display bookmark.event_id end -->
 
