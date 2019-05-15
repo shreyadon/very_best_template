@@ -14,7 +14,7 @@
 <hr>
 
 <!-- Form bookmark start -->
-<form action="/update_bookmark/<%= @bookmark.id %>" method="post">
+<form action="/update_bookmark/<%= @bookmark.id %>" method="post" enctype="multipart/form-data">
 <!-- Form bookmark end -->
 
   <!-- Label and input for user_id start -->
@@ -48,7 +48,8 @@
     </label>
 
     <!-- Input for image start -->
-    <input type="text" id="image" name="image" class="form-control" value="<%= @bookmark.image %>">
+    <%= cl_image_tag(@bookmark.image.to_s, :width => 90, :height => 90, :crop => :thumb) %>
+    <input type="file" id="image" name="image" class="form-control">
     <!-- Input for image end -->
   </div>
   <!-- Label and input for image end -->

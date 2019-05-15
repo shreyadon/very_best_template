@@ -22,7 +22,7 @@ class BookmarksController < ApplicationController
 
     @bookmark.user_id = params.fetch("user_id")
     @bookmark.notes = params.fetch("notes")
-    @bookmark.image = params.fetch("image")
+    @bookmark.image = params.fetch("image") if params.key?("image")
     @bookmark.event_id = params.fetch("event_id")
 
     if @bookmark.valid?
@@ -39,7 +39,7 @@ class BookmarksController < ApplicationController
 
     @bookmark.user_id = params.fetch("user_id")
     @bookmark.notes = params.fetch("notes")
-    @bookmark.image = params.fetch("image")
+    @bookmark.image = params.fetch("image") if params.key?("image")
     @bookmark.event_id = params.fetch("event_id")
 
     if @bookmark.valid?
@@ -62,7 +62,7 @@ class BookmarksController < ApplicationController
 
     @bookmark.user_id = params.fetch("user_id")
     @bookmark.notes = params.fetch("notes")
-    @bookmark.image = params.fetch("image")
+    @bookmark.image = params.fetch("image") if params.key?("image")
     @bookmark.event_id = params.fetch("event_id")
 
     if @bookmark.valid?

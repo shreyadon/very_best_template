@@ -17,7 +17,7 @@
 <hr>
 
 <!-- Form bookmark start -->
-<form action="/create_bookmark" method="post">
+<form action="/create_bookmark" method="post" enctype="multipart/form-data">
 <!-- Form bookmark end -->
 
   <!-- Label and input for user_id start -->
@@ -51,7 +51,7 @@
     </label>
 
     <!-- Input for image start -->
-    <input type="text" id="image" name="image" class="form-control" value="<%= @bookmark.image %>">
+    <input type="file" id="image" name="image" class="form-control">
     <!-- Input for image end -->
   </div>
   <!-- Label and input for image end -->
